@@ -1,0 +1,22 @@
+meta {
+  name: put -user
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{url}}/user
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "companyId": 0,
+    "email": "email@example.com",
+    "expirationDate": "2024-01-28T19:49:27.750Z",
+    "name": "name",
+    "quotaInSecond": 0,
+    "subscriptionPlans": 0
+  }
+}

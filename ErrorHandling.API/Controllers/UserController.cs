@@ -2,6 +2,7 @@
 using ErrorHandling.API.Filters;
 using ErrorHandling.API.Models;
 using ErrorHandling.Service.Model;
+using ErrorHandling.Service.Model.Exceptions;
 using ErrorHandling.Service.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,5 +33,13 @@ public class UserController : Controller
     {
         UserModel model = await _userService.AddAsync(user.ToModel());
         return model.ToDto();
+    }
+
+    [HttpPut]
+    public async Task<ActionResult<UserDto>> Put(UserAddDto user)
+    {
+        var exception = new ForbidException("Not allowed to add users");
+        exception.Data.Add("model", user);
+        throw exception;
     }
 }
