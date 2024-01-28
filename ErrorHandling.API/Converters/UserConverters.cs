@@ -1,11 +1,11 @@
-﻿using ErrorHandling.API.Model;
+﻿using ErrorHandling.API.Models;
 using ErrorHandling.Service.Model;
 
 namespace ErrorHandling.API.Converters;
 
 internal static class UserConverters
 {
-    public static UserDto ToEntity(this UserModel model)
+    public static UserDto ToDto(this UserModel model)
     {
         return new UserDto
         {
@@ -16,9 +16,9 @@ internal static class UserConverters
         };
     }
 
-    public static IEnumerable<UserDto> ToEntity(this IEnumerable<UserModel> models)
+    public static IEnumerable<UserDto> ToDto(this IEnumerable<UserModel> models)
     {
-        return models.Select(model => ToEntity(model));
+        return models.Select(model => ToDto(model));
     }
 
     public static UserModel ToModel(this UserDto entity)
@@ -27,6 +27,16 @@ internal static class UserConverters
         {
             Email = entity.Email,
             Id = entity.Id,
+            Name = entity.Name,
+            CompanyId = entity.CompanyId
+        };
+    }
+
+    public static UserAddModel ToModel(this UserAddDto entity)
+    {
+        return new UserAddModel
+        {
+            Email = entity.Email,
             Name = entity.Name,
             CompanyId = entity.CompanyId
         };

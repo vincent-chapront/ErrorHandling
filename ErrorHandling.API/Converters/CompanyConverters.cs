@@ -1,4 +1,4 @@
-﻿using ErrorHandling.API.Model;
+﻿using ErrorHandling.API.Models;
 using ErrorHandling.Service.Model;
 
 namespace ErrorHandling.API.Converters;
@@ -19,6 +19,16 @@ internal static class CompanyConverters
     public static IEnumerable<CompanyDto> ToDto(this IEnumerable<CompanyModel> models)
     {
         return models.Select(entity => ToDto(entity));
+    }
+
+    public static CompanyAddModel ToModel(this CompanyAddDto dto)
+    {
+        return new CompanyAddModel
+        {
+            Description = dto.Description,
+            Name = dto.Name,
+            UserCountMax = dto.UserCountMax
+        };
     }
 
     public static CompanyModel ToModel(this CompanyDto dto)

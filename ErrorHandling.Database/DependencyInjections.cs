@@ -10,7 +10,7 @@ namespace ErrorHandling.Service
         {
             service.AddScoped<ICompanyDbService, CompanyDbService>();
             service.AddScoped<IUserDbService, UserDbService>();
-            service.AddSingleton<IStorageDbService, StorageDbService>();
+            service.AddSingleton<ErrorHandlingDbContext>();
             return service;
         }
     }

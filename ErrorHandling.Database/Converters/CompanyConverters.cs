@@ -16,6 +16,16 @@ internal static class CompanyConverters
         };
     }
 
+    public static CompanyEntity ToEntity(this CompanyAddModel model)
+    {
+        return new CompanyEntity
+        {
+            Description = model.Description,
+            Name = model.Name,
+            UserCountMax = model.UserCountMax
+        };
+    }
+
     public static IEnumerable<CompanyEntity> ToEntity(this IEnumerable<CompanyModel> models)
     {
         return models.Select(model => ToEntity(model));

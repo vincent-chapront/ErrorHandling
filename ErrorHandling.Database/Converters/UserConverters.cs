@@ -16,6 +16,16 @@ internal static class UserConverters
         };
     }
 
+    public static UserEntity ToEntity(this UserAddModel model)
+    {
+        return new UserEntity
+        {
+            Email = model.Email,
+            Name = model.Name,
+            CompanyId = model.CompanyId
+        };
+    }
+
     public static IEnumerable<UserEntity> ToEntity(this IEnumerable<UserModel> models)
     {
         return models.Select(model => ToEntity(model));

@@ -1,11 +1,14 @@
 ﻿using ErrorHandling.Database.Services;
 using ErrorHandling.Service.Model;
+using ErrorHandling.Service.Model.Exceptions;
 
 namespace ErrorHandling.Service.Services;
 
 public interface IUserService
 {
-    List<UserModel> GetAll();
+    Task<UserModel> AddAsync(UserAddModel model);
+
+    Task<List<UserModel>> GetAllAsync();
 }
 
 public class UserService : IUserService
@@ -17,8 +20,19 @@ public class UserService : IUserService
         _userDbService = userDbService;
     }
 
-    public List<UserModel> GetAll()
+    public async Task<UserModel> AddAsync(UserAddModel model)
     {
-        return _userDbService.GetAll();
+        if (await _userDbService.IsDuplicateEmailAsync(model.Email))
+        {
+            var exception = new BadRequestException("A user with the same email already exists");
+            exception.Data.Add("model", model);
+            throw exception;
+        }
+        return await _userDbService.AddAsync(model);
+    }
+
+    public async Task<List<UserModel>> GetAllAsync()
+    {
+        return await _userDbService.GetAllAsync();
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace ErrorHandling.API.Model;
+﻿namespace ErrorHandling.API.Models;
 
 public class UserDto
 {
