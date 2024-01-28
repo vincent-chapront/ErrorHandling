@@ -1,9 +1,9 @@
 ﻿using ErrorHandling.API.Converters;
-using ErrorHandling.Service.Services;
-using Microsoft.AspNetCore.Mvc;
+using ErrorHandling.API.Filters;
 using ErrorHandling.API.Models;
 using ErrorHandling.Service.Model;
-using ErrorHandling.API.Filters;
+using ErrorHandling.Service.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ErrorHandling.API.Controllers;
 

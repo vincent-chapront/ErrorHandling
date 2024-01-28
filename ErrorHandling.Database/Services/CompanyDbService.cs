@@ -1,10 +1,7 @@
 ﻿using ErrorHandling.Database.Converters;
-using ErrorHandling.Database.Models;
 using ErrorHandling.Service.Model;
 using ErrorHandling.Service.Model.Exceptions;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
-using System.Xml.Linq;
 
 namespace ErrorHandling.Database.Services;
 
