@@ -18,7 +18,7 @@ public class CompanyMustExistAttribute : ValidationAttribute
 
         if (!companyService.Exists((int)value))
         {
-            return new ValidationResult(ErrorMessage);
+            return new ValidationResult(ErrorMessage, new string[] { validationContext.MemberName });
         }
 
         return ValidationResult.Success;
