@@ -10,7 +10,7 @@ namespace ErrorHandling.API.Dto
         [Required]
         public string Name { get; set; } = string.Empty;
 
-        [Range(1, int.MaxValue)]
+        [Range(1, 10)]
         public int UserCountMax { get; set; }
     }
 }
