@@ -38,8 +38,10 @@ public class ErrorHandlingDbContext : DbContext
                 Id = index,
                 Name = $"Company {index}",
                 Email = $"user_{index}@example.com",
-                CompanyId = (int)Math.Ceiling(index/2.0),
-                IsAdmin = index % 2 == 0
+                CompanyId = (int)Math.Ceiling(index / 2.0),
+                IsAdmin = index % 2 == 0,
+                UserName = $"user_{index}",
+                Password = "pwd"
             });
         });
         base.OnModelCreating(modelBuilder);

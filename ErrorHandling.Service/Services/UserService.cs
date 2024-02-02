@@ -9,6 +9,7 @@ public interface IUserService
     Task<UserModel> AddAsync(UserAddModel model);
 
     Task<List<UserModel>> GetAllAsync();
+    Task<UserModel> Login(string username, string password);
 }
 
 public class UserService : IUserService
@@ -36,5 +37,8 @@ public class UserService : IUserService
         return await _userDbService.GetAllAsync();
     }
 
-
+    public async Task<UserModel> Login(string username, string password)
+    {
+        return await _userDbService.Login(username, password);
+    }
 }

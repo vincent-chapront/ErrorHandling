@@ -11,6 +11,7 @@ public interface IUserDbService
     Task<List<UserModel>> GetAllAsync();
 
     Task<bool> IsDuplicateEmailAsync(string email);
+    Task<UserModel> Login(string username, string password);
 }
 
 public class UserDbService : IUserDbService
@@ -40,5 +41,11 @@ public class UserDbService : IUserDbService
     public async Task<bool> IsDuplicateEmailAsync(string email)
     {
         return await _dbContext.Users.AnyAsync(x => x.Email == email);
+    }
+
+    public async Task<UserModel> Login(string username, string password)
+    {
+        var entity = await _dbContext.Users.FirstOrDefaultAsync(x => x.UserName == username && x.Password == password);
+        return entity?.ToModel();
     }
 }
