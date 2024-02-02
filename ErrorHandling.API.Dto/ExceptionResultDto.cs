@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 
-namespace ErrorHandling.API.Models
+namespace ErrorHandling.API.Dto
 {
-    internal class ExceptionResultDto
+    public class ExceptionResultDto
     {
         public ExceptionResultDto(string details, IDictionary data, string[] errors)
         {
@@ -13,7 +13,7 @@ namespace ErrorHandling.API.Models
 
         public IDictionary Data { get; }
         public string Details { get; }
-        public string[] Errors { get; set; }
+        public string[] Errors { get; }
         public string Exception { get; set; }
     }
 }

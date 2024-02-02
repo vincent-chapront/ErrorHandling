@@ -1,4 +1,4 @@
-﻿using ErrorHandling.API.Models;
+﻿using ErrorHandling.API.Dto;
 using ErrorHandling.Service.Model;
 
 namespace ErrorHandling.API.Converters;

@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHandling.API", "ErrorHandling.API\ErrorHandling.API.csproj", "{04891189-26CB-45C3-8D4E-D5D4F024FFF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErrorHandling.API", "ErrorHandling.API\ErrorHandling.API.csproj", "{04891189-26CB-45C3-8D4E-D5D4F024FFF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHandling.Service", "ErrorHandling.Service\ErrorHandling.Service.csproj", "{3ED5BBE3-97FE-499D-8901-27AE29CAC39C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErrorHandling.Service", "ErrorHandling.Service\ErrorHandling.Service.csproj", "{3ED5BBE3-97FE-499D-8901-27AE29CAC39C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHandling.Database", "ErrorHandling.Database\ErrorHandling.Database.csproj", "{36E84F0B-8341-4B6D-B05B-1078C9F65AA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErrorHandling.Database", "ErrorHandling.Database\ErrorHandling.Database.csproj", "{36E84F0B-8341-4B6D-B05B-1078C9F65AA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHandling.Service.Model", "ErrorHandling.Service.Model\ErrorHandling.Service.Model.csproj", "{85A3B839-95E0-4BA3-BD49-CE3D03DFCE4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErrorHandling.Service.Model", "ErrorHandling.Service.Model\ErrorHandling.Service.Model.csproj", "{85A3B839-95E0-4BA3-BD49-CE3D03DFCE4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHandling.API.Dto.Tests", "ErrorHandling.API.Models.Tests\ErrorHandling.API.Dto.Tests.csproj", "{A24D9C22-9229-4E99-9D36-D243628CF79B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHandling.API.Dto", "ErrorHandling.API.Dto\ErrorHandling.API.Dto.csproj", "{9B2016C5-3EF4-4992-90A8-36FB8D3990D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{85A3B839-95E0-4BA3-BD49-CE3D03DFCE4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85A3B839-95E0-4BA3-BD49-CE3D03DFCE4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85A3B839-95E0-4BA3-BD49-CE3D03DFCE4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A24D9C22-9229-4E99-9D36-D243628CF79B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A24D9C22-9229-4E99-9D36-D243628CF79B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A24D9C22-9229-4E99-9D36-D243628CF79B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A24D9C22-9229-4E99-9D36-D243628CF79B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B2016C5-3EF4-4992-90A8-36FB8D3990D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B2016C5-3EF4-4992-90A8-36FB8D3990D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B2016C5-3EF4-4992-90A8-36FB8D3990D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B2016C5-3EF4-4992-90A8-36FB8D3990D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
 ﻿using ErrorHandling.API.Converters;
 using ErrorHandling.API.Filters;
-using ErrorHandling.API.Models;
+using ErrorHandling.API.Dto;
 using ErrorHandling.Service.Model;
 using ErrorHandling.Service.Services;
 using Microsoft.AspNetCore.Mvc;

@@ -1,7 +1,7 @@
 ﻿using ErrorHandling.API.Attributes;
 using System.ComponentModel.DataAnnotations;
 
-namespace ErrorHandling.API.Models;
+namespace ErrorHandling.API.Dto;
 
 public class UserAddDto
 {

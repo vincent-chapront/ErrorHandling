@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ErrorHandling.API.Dto\ErrorHandling.API.Dto.csproj" />
     <ProjectReference Include="..\ErrorHandling.Service.Model\ErrorHandling.Service.Model.csproj" />
     <ProjectReference Include="..\ErrorHandling.Service\ErrorHandling.Service.csproj" />
   </ItemGroup>

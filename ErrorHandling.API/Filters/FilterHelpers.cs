@@ -1,4 +1,4 @@
-﻿using ErrorHandling.API.Models;
+﻿using ErrorHandling.API.Dto;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 

@@ -1,4 +1,4 @@
-﻿namespace ErrorHandling.API.Models;
+﻿namespace ErrorHandling.API.Dto;
 
 public enum SubscriptionPlans
 {
