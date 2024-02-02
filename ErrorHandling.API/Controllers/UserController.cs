@@ -7,7 +7,6 @@ using ErrorHandling.Service.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ErrorHandling.API.Controllers;
-
 [ApiController]
 [Route("user")]
 [ValidationFilter]
@@ -35,11 +34,10 @@ public class UserController : Controller
         return model.ToDto();
     }
 
-    [HttpPut]
-    public async Task<ActionResult<UserDto>> Put(UserAddDto user)
+    [HttpPut("{id}")]
+    [TypeFilter(typeof(CanPutUserAuthorize))]
+    public async Task<ActionResult<UserDto>> Put([FromBody]UserAddDto user, int id)
     {
-        var exception = new ForbidException("Not allowed to add users");
-        exception.Data.Add("model", user);
-        throw exception;
+        return new UserDto() { Name="SHOULD NOT HAPPEN"};
     }
 }

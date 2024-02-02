@@ -27,7 +27,7 @@ public class ErrorHandlingDbContext : DbContext
                 Id = index,
                 Name = $"Company {index}",
                 Description = $"Description of company {index}",
-                UserCountMax = Random.Shared.Next(1, 100)
+                UserCountMax = index % 2 == 0 ? 5 : 2
             });
         });
 
@@ -38,7 +38,8 @@ public class ErrorHandlingDbContext : DbContext
                 Id = index,
                 Name = $"Company {index}",
                 Email = $"user_{index}@example.com",
-                CompanyId = Random.Shared.Next(1, 6)
+                CompanyId = (int)Math.Ceiling(index/2.0),
+                IsAdmin = index % 2 == 0
             });
         });
         base.OnModelCreating(modelBuilder);

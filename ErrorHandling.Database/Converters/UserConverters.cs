@@ -12,7 +12,8 @@ internal static class UserConverters
             Email = model.Email,
             Id = model.Id,
             Name = model.Name,
-            CompanyId = model.CompanyId
+            CompanyId = model.CompanyId,
+            IsAdmin = model.IsAdmin
         };
     }
 
@@ -22,7 +23,8 @@ internal static class UserConverters
         {
             Email = model.Email,
             Name = model.Name,
-            CompanyId = model.CompanyId
+            CompanyId = model.CompanyId,
+            IsAdmin = model.IsAdmin
         };
     }
 
@@ -38,7 +40,8 @@ internal static class UserConverters
             Email = entity.Email,
             Id = entity.Id,
             Name = entity.Name,
-            CompanyId = entity.CompanyId
+            CompanyId = entity.CompanyId,
+            IsAdmin = entity.IsAdmin
         };
     }
 

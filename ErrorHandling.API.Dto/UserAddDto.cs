@@ -23,4 +23,7 @@ public class UserAddDto
 
     [Required]
     public SubscriptionPlans SubscriptionPlans { get; set; }
+
+    [Required]
+    public bool IsAdmin { get; set; }
 }

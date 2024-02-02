@@ -12,7 +12,8 @@ internal static class UserConverters
             Email = model.Email,
             Id = model.Id,
             Name = model.Name,
-            CompanyId = model.CompanyId
+            CompanyId = model.CompanyId,
+            IsAdmin = model.IsAdmin
         };
     }
 
@@ -21,24 +22,26 @@ internal static class UserConverters
         return models.Select(model => ToDto(model));
     }
 
-    public static UserModel ToModel(this UserDto entity)
+    public static UserModel ToModel(this UserDto dto)
     {
         return new UserModel
         {
-            Email = entity.Email,
-            Id = entity.Id,
-            Name = entity.Name,
-            CompanyId = entity.CompanyId
+            Email = dto.Email,
+            Id = dto.Id,
+            Name = dto.Name,
+            CompanyId = dto.CompanyId,
+            IsAdmin = dto.IsAdmin
         };
     }
 
-    public static UserAddModel ToModel(this UserAddDto entity)
+    public static UserAddModel ToModel(this UserAddDto dto)
     {
         return new UserAddModel
         {
-            Email = entity.Email,
-            Name = entity.Name,
-            CompanyId = entity.CompanyId
+            Email = dto.Email,
+            Name = dto.Name,
+            CompanyId = dto.CompanyId,
+            IsAdmin = dto.IsAdmin
         };
     }
 
