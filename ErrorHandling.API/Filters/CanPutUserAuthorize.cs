@@ -1,9 +1,8 @@
-﻿using ErrorHandling.API.Filters;
-using ErrorHandling.Service.Model.Exceptions;
+﻿using ErrorHandling.Service.Model.Exceptions;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Net;
 
-namespace ErrorHandling.API.Controllers;
+namespace ErrorHandling.API.Filters;
 
 public class CanPutUserAuthorize : IAuthorizationFilter
 {
