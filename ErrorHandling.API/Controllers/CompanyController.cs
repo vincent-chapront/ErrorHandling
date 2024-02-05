@@ -4,6 +4,8 @@ using ErrorHandling.API.Dto;
 using ErrorHandling.Service.Model;
 using ErrorHandling.Service.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace ErrorHandling.API.Controllers;
 
@@ -21,6 +23,7 @@ public class CompanyController : Controller
     }
 
     [HttpGet]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public async Task<ActionResult<List<CompanyDto>>> GetAll()
     {
         var companies = await _companyService.GetAllAsync();

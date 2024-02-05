@@ -14,30 +14,32 @@ namespace ErrorHandling.API.Controllers;
 [AllowAnonymous]
 public class LoginController : Controller
 {
-    private readonly IConfiguration _configuration;
+    private readonly JwtOptions _jwtOptions;
     private readonly IUserService _userService;
 
-    public LoginController(IConfiguration configuration, IUserService userService)
+    public LoginController(JwtOptions  jwtOptions, IUserService userService)
     {
-        _configuration = configuration;
+        _jwtOptions = jwtOptions;
         _userService = userService;
     }
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginDto dto)
     {
         UserModel user = await _userService.Login(dto.Username, dto.Password);
-        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.SigningKey));
         var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
         var claims = new[]
         {
-            new Claim(JwtRegisteredClaimNames.NameId, user.Id.ToString())
+            new Claim("userId", user.Id.ToString()),
+            new Claim("companyId", user.CompanyId.ToString()),
+            new Claim("role", user.IsAdmin.ToString())
         };
         var sectoken = new JwtSecurityToken(
-            _configuration["Jwt:Issuer"],
-            _configuration["Jwt:Issuer"],
+            _jwtOptions.Issuer,
+            _jwtOptions.Audience,
             claims,
-            expires: DateTime.Now,
+            expires: DateTime.Now.AddHours(24),
             signingCredentials: credentials);
         var token = new JwtSecurityTokenHandler().WriteToken(sectoken);
         return Ok(new { token = token });
@@ -46,6 +48,6 @@ public class LoginController : Controller
     [HttpPost("logout")]
     public async Task<IActionResult> Logout()
     {
-        return null;
+        return Ok(new {token=""});
     }
 }
